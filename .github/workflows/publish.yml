@@ -4,7 +4,10 @@ on:
     tags:
       - "v*"
 jobs:
+  tests:
+    uses: far-lock/far-lock/.github/workflows/build.yml@main
   build:
+    needs: [tests]
     runs-on: ubuntu-latest
     permissions:
       contents: write

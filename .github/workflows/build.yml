@@ -1,5 +1,6 @@
 name: Build and test library
 on:
+  workflow_call:
   push:
     branches: [main]
   pull_request:
