@@ -1,0 +1,11 @@
+# System files
+.DS_Store
+
+# Dependencies
+node_modules
+
+# Documentation output
+out
+
+# Code coverage
+.nyc_output

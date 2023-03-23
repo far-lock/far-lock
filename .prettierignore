@@ -1,0 +1,4 @@
+# Ignore artifacts:
+out
+node_modules
+.nyc_output/

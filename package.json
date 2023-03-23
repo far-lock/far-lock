@@ -1,0 +1,39 @@
+{
+  "name": "far-lock",
+  "version": "0.0.0",
+  "description": "Far-lock library",
+  "main": "index.js",
+  "scripts": {
+    "generate-docs": "jsdoc index.js README.md",
+    "format-code": "prettier --write . --ignore-unknown",
+    "lint-commit": "commitlint --from=HEAD~1",
+    "prepare": "husky install",
+    "test": "tap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/far-lock/far-lock.git"
+  },
+  "keywords": [
+    "library",
+    "utils"
+  ],
+  "author": "Andrea Stagi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/far-lock/far-lock/issues"
+  },
+  "homepage": "https://github.com/far-lock/far-lock#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.0",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3",
+    "jsdoc": "^4.0.2",
+    "lint-staged": "^13.2.0",
+    "prettier": "2.8.6",
+    "tap": "^16.3.4"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write . --ignore-unknown"
+  }
+}
