@@ -1,0 +1,31 @@
+name: Build and test library
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 24
+      matrix:
+        node-version: [16.x, 17.x, 18.x]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }} 🪢
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies 📦
+        run: npm install
+      - name: Run commit linter 📑
+        run: npm run lint-commit
+      - name: Run code linter 🧑‍💻
+        run: npm run lint-code
+      - name: Run tests 🧪
+        run: npm run test
+      - name: Upload coverage 📈
+        uses: codecov/codecov-action@v3

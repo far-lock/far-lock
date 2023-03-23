@@ -1,0 +1,40 @@
+name: Report a bug
+description: Tell us about a bug or issue you may have identified in Far-Lock.
+title: "Provide a general summary of the issue"
+labels: [bug]
+assignees: "-"
+body:
+  - type: checkboxes
+    attributes:
+      label: Prerequisites
+      description: Take a couple minutes to help our maintainers work faster.
+      options:
+        - label: I have [searched](https://github.com/far-lock/far-lock/issues?utf8=%E2%9C%93&q=is%3Aissue) for duplicate or closed issues
+          required: true
+        - label: I have read the [contributing guidelines](https://github.com/far-lock/far-lock/blob/main/CONTRIBUTING.md)
+          required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Describe the issue
+      description: Provide a summary of the issue and what you expected to happen, including specific steps to reproduce.
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: What operating system(s) are you seeing the problem on?
+      multiple: true
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: What version of Far-Lock are you using?
+      placeholder: "e.g., v5.1.0 or v4.5.2"
+    validations:
+      required: true

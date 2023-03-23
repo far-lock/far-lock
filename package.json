@@ -6,9 +6,11 @@
   "scripts": {
     "generate-docs": "jsdoc index.js README.md",
     "format-code": "prettier --write . --ignore-unknown",
+    "lint-code": "prettier --check .",
     "lint-commit": "commitlint --from=HEAD~1",
     "prepare": "husky install",
-    "test": "tap"
+    "test": "tap",
+    "posttest": "tap --coverage-report=text-lcov > coverage.info"
   },
   "repository": {
     "type": "git",

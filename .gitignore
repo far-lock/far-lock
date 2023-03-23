@@ -9,3 +9,4 @@ out
 
 # Code coverage
 .nyc_output
+coverage.info
