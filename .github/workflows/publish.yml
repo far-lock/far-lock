@@ -1,0 +1,32 @@
+name: Publish package
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js 🪢
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org"
+      - name: Installing dependencies 📦
+        run: npm ci
+      - name: Publishing package to NPM 🚀
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm i extract-changelog-release
+      - name: Generate Release Body 🧾
+        run: npx extract-changelog-release > RELEASE_BODY.md
+      - uses: ncipollo/release-action@v1
+        with:
+          bodyFile: "RELEASE_BODY.md"
+          token: ${{ secrets.GITHUB_TOKEN }}

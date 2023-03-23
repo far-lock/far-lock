@@ -19,8 +19,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install dependencies 📦
-        run: npm install
+      - name: Installing dependencies 📦
+        run: npm ci
       - name: Run commit linter 📑
         run: npm run lint-commit
       - name: Run code linter 🧑‍💻

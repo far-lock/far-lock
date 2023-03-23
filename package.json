@@ -9,8 +9,10 @@
     "lint-code": "prettier --check .",
     "lint-commit": "commitlint --from=HEAD~1",
     "prepare": "husky install",
+    "posttest": "tap --coverage-report=text-lcov > coverage.info",
+    "postversion": "echo \"👉🏻 You can now publish your tag with 'git push --follow-tags'\"",
     "test": "tap",
-    "posttest": "tap --coverage-report=text-lcov > coverage.info"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.4.4",
+    "conventional-changelog": "^3.1.25",
     "husky": "^8.0.3",
     "jsdoc": "^4.0.2",
     "lint-staged": "^13.2.0",

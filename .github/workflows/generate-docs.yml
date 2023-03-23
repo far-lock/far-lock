@@ -16,8 +16,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install dependencies 📦
-        run: npm install
+      - name: Installing dependencies 📦
+        run: npm ci
       - name: Building documentation 📚
         run: npm run generate-docs
       - name: Publishing documentation 🌎
