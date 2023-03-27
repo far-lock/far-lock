@@ -15,3 +15,17 @@ exports.getStars = function (numberOfStars) {
 exports.getUnicorns = function (numberOfUnicorns) {
   return "🦄".repeat(numberOfUnicorns);
 };
+
+/**
+ * fibonacci is function to get Fibonacci number at the nth term.
+ * @function fibonacci
+ * @param {number} nth - The nth term to find.
+ */
+const fibonacci = function (nth) {
+  if (nth < 2) {
+    return nth;
+  }
+  return fibonacci(nth - 1) + fibonacci(nth - 2);
+};
+
+exports.fibonacci = fibonacci;

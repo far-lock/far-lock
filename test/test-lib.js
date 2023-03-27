@@ -1,5 +1,5 @@
 const tap = require("tap");
-const { getStars, getUnicorns } = require("../index.js");
+const { getStars, getUnicorns, fibonacci } = require("../index.js");
 
 tap.equal(getStars(1), "🌟");
 tap.equal(getStars(3), "🌟🌟🌟");
@@ -20,3 +20,7 @@ tap.throws(
   {},
   { skip: true }
 );
+
+tap.equal(fibonacci(3), 2);
+tap.equal(fibonacci(5), 5);
+tap.equal(fibonacci(8), 21);
