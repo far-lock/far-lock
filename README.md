@@ -1,5 +1,7 @@
 # FarLock utilities library
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
 ## Install
 
 ```sh
