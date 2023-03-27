@@ -39,6 +39,6 @@
     "tap": "^16.3.4"
   },
   "lint-staged": {
-    "**/*": "prettier --write . --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
