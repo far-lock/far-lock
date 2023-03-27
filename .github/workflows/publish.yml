@@ -6,7 +6,7 @@ on:
 jobs:
   tests:
     uses: far-lock/far-lock/.github/workflows/build.yml@main
-  build:
+  publish:
     needs: [tests]
     runs-on: ubuntu-latest
     permissions:
@@ -33,3 +33,8 @@ jobs:
         with:
           bodyFile: "RELEASE_BODY.md"
           token: ${{ secrets.GITHUB_TOKEN }}
+  publish-doc:
+    permissions:
+      contents: write
+    needs: [publish]
+    uses: far-lock/far-lock/.github/workflows/generate-docs.yml@main
