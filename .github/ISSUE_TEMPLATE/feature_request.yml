@@ -1,7 +1,7 @@
 name: Feature request
 description: Suggest new or updated features to include in Far-Lock.
 title: "Suggest a new feature"
-labels: [feature]
+labels: [enhancement]
 assignees: []
 body:
   - type: checkboxes
