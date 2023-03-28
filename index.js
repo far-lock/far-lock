@@ -17,6 +17,15 @@ exports.getUnicorns = function (numberOfUnicorns) {
 };
 
 /**
+ * getGuitars is function to get a string containing the amount of guitars you want.
+ * @function getGuitars
+ * @param {number} numberOfGuitars - The number of guitars you want to display.
+ */
+exports.getGuitars = function (numberOfGuitars) {
+  return "🎸".repeat(numberOfGuitars);
+};
+
+/**
  * fibonacci is function to get Fibonacci number at the nth term.
  * @function fibonacci
  * @param {number} nth - The nth term to find.
